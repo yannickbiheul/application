@@ -18,7 +18,7 @@ html, body {
 
 h1 {
     font-family: 'Bangers', cursive;
-    font-size: 8em;
+    font-size: 4em;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px #000;
     transition-duration: 0.5s;
