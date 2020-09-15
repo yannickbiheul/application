@@ -1,34 +1,15 @@
-let titreApp = document.getElementById("titreApp");
-let cadreApp = document.querySelector(".cadreApp");
-let vitesse = 2;
-let hauteurTitre = parseFloat(getComputedStyle(titreApp).height);
-let animationId = null;
-console.log(getComputedStyle(titreApp).top);
-console.log(getComputedStyle(cadreApp).height);
-console.log(hauteurTitre);
+let compteurElt = document.getElementById("titreApp");
 
-// Déplacer le titre vers le bas jusqu'au bord du cadre
-function deplacerTitreBas() {
-    let yTitre = parseFloat(getComputedStyle(titreApp).top);
-    let yMax = parseFloat(getComputedStyle(cadreApp).height) / 2;
-    if (yTitre + hauteurTitre <= yMax) {
-        titreApp.style.top = (yTitre + vitesse) + "px";
-        animationId = requestAnimationFrame(deplacerTitreBas);
+function diminuerCompteur() {
+    let compteur = Number(compteurElt.textContent);
+    if (compteur > 1) {
+        compteurElt.textContent = compteur - 1;
     } else {
-        titreApp.style.letterSpacing = "6px";
-        animationId = requestAnimationFrame(deplacerTitreHaut);
+        clearInterval();
+        compteurElt.textContent = "APPLICATIONS";
+        compteurElt.style.fontSize = "4em";
     }
+    
 }
 
-function deplacerTitreHaut() {
-    let yTitre = parseFloat(getComputedStyle(titreApp).top);
-    let yMax = parseFloat(getComputedStyle(cadreApp).height) / 2;
-    if (yTitre + hauteurTitre >= yMax) {
-        titreApp.style.top = (yTitre - vitesse) + "px";
-        animationId = requestAnimationFrame(deplacerTitreHaut);
-    } else {
-        animationId = requestAnimationFrame(deplacerTitreBas);
-    }
-}
-
-animationId = requestAnimationFrame(deplacerTitreBas);
+setInterval(diminuerCompteur, 1000);

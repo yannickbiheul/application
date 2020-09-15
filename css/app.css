@@ -18,9 +18,10 @@ html, body {
 
 h1 {
     font-family: 'Bangers', cursive;
-    font-size: 4em;
+    font-size: 8em;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px #000;
+    transition-duration: 0.5s;
 }
 
 main {
@@ -91,14 +92,11 @@ section {
 .cadreApp {
     width: 800px;
     height: 600px;
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#titreApp {
-    border: 1px solid #fff;
-    position: relative;
-}
+
