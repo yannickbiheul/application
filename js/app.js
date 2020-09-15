@@ -16,20 +16,18 @@ function deplacerTitreBas() {
         animationId = requestAnimationFrame(deplacerTitreBas);
     } else {
         titreApp.style.letterSpacing = "6px";
-        // cancelAnimationFrame(deplacerTitreBas);
-        requestAnimationFrame(deplacerTitreHaut);
+        animationId = requestAnimationFrame(deplacerTitreHaut);
     }
 }
 
 function deplacerTitreHaut() {
-    let yTitre = parseFloat(getComputedStyle(titreApp).bottom);
+    let yTitre = parseFloat(getComputedStyle(titreApp).top);
     let yMax = parseFloat(getComputedStyle(cadreApp).height) / 2;
-    if (yTitre + hauteurTitre <= yMax) {
-        titreApp.style.bottom = (yTitre + vitesse) + "px";
+    if (yTitre + hauteurTitre >= yMax) {
+        titreApp.style.top = (yTitre - vitesse) + "px";
         animationId = requestAnimationFrame(deplacerTitreHaut);
     } else {
-        cancelAnimationFrame(deplacerTitreHaut);
-        requestAnimationFrame(deplacerTitreBas);
+        animationId = requestAnimationFrame(deplacerTitreBas);
     }
 }
 
