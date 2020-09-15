@@ -87,3 +87,18 @@ section {
     width: 100vw;
     height: 100vh;
 }
+
+.cadreApp {
+    width: 800px;
+    height: 600px;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#titreApp {
+    border: 1px solid #fff;
+    position: relative;
+}
