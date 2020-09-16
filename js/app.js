@@ -7,19 +7,10 @@ function diminuerCompteur() {
         compteurElt.textContent = compteur - 1;
     } else {
         clearInterval();
-        compteurElt.textContent = "Bienvenue dans";
-        timeoutId = window.setTimeout(afficherTitre, 2000);
-        clearAlert();
+        compteurElt.style.fontSize = "4em";
+        compteurElt.textContent = "Applications";
     }
     
-}
-
-function afficherTitre() {
-    compteurElt.textContent = "APPLICATIONS";
-}
-
-function clearAlert() {
-    window.clearTimeout(timeoutId);
 }
 
 setInterval(diminuerCompteur, 1000);
