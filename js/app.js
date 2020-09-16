@@ -35,3 +35,23 @@ function deplacerBaballe() {
 }
 
 animationId = requestAnimationFrame(deplacerBaballe);
+
+
+
+/* CHRONOMETRE */
+
+// Variables
+let heures = document.querySelector(".heures>h2");
+let h = Number(heures.textContent);
+let minutes = document.querySelector(".minutes>h2");
+let m = Number(minutes.textContent);
+let secondes = document.querySelector(".secondes>h2");
+let s = Number(secondes.textContent);
+let bouton = document.querySelector(".btn");
+
+function demarrerChrono() {
+    secondes.textContent = "0" + (s + 1);
+    
+}
+
+setInterval(demarrerChrono, 1000);
